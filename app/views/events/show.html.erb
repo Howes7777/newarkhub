@@ -1,22 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Eventname:</b>
+  <b>Name:</b>
+  <%= @event.user.full_name %>
+</p> 
+
+<p>
+  <b>Event Name:</b>
   <%= @event.eventname %>
 </p>
 
 <p>
-  <b>Startdate:</b>
+  <b>Start Date:</b>
   <%= @event.startdate %>
 </p>
 
 <p>
-  <b>Enddate:</b>
+  <b>End Date:</b>
   <%= @event.enddate %>
 </p>
 
 <p>
-  <b>Eventtime:</b>
+  <b>Event Time:</b>
   <%= @event.eventtime %>
 </p>
 
@@ -31,7 +36,7 @@
 </p>
 
 <p>
-  <b>Eventdescription:</b>
+  <b>Event Description:</b>
   <%= @event.EventDescription %>
 </p>
 
