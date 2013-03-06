@@ -11,6 +11,15 @@ class User < ActiveRecord::Base
 
   # attr_accessible :title, :body
 
+  validates :first_name, presence: true
+
+  validates :last_name, presence: true
+
+  validates :profile_name, presence: true,
+                           uniqueness: true
+                           
+  
+
   has_many :events
 
   def full_name
