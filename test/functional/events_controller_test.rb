@@ -23,6 +23,12 @@ class EventsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should be logged in to post status" do
+      post :create, status: { content: "Hello" }
+      assert_response :redirect
+      assert_redirect_to new_user_session_path
+  end
+
   test "should create event" do
     assert_difference('Event.count') do
       post :create, event: { EventDescription: @event.EventDescription, cost: @event.cost, enddate: @event.enddate, eventname: @event.eventname, eventtime: @event.eventtime, sessions: @event.sessions, startdate: @event.startdate }
