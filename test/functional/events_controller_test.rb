@@ -26,10 +26,12 @@ class EventsControllerTest < ActionController::TestCase
   test "should be logged in to post status" do
       post :create, status: { content: "Hello" }
       assert_response :redirect
-      assert_redirect_to new_user_session_path
+      assert_redirected_to new_user_session_path
   end
 
-  test "should create event" do
+  test "should create event when logged in" do
+    sign_in users(:test1234)
+
     assert_difference('Event.count') do
       post :create, event: { EventDescription: @event.EventDescription, cost: @event.cost, enddate: @event.enddate, eventname: @event.eventname, eventtime: @event.eventtime, sessions: @event.sessions, startdate: @event.startdate }
     end
@@ -42,15 +44,7 @@ class EventsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
-    get :edit, id: @event
-    assert_response :success
-  end
 
-  test "should update event" do
-    put :update, id: @event, event: { EventDescription: @event.EventDescription, cost: @event.cost, enddate: @event.enddate, eventname: @event.eventname, eventtime: @event.eventtime, sessions: @event.sessions, startdate: @event.startdate }
-    assert_redirected_to event_path(assigns(:event))
-  end
 
   test "should destroy event" do
     assert_difference('Event.count', -1) do
@@ -59,4 +53,34 @@ class EventsControllerTest < ActionController::TestCase
 
     assert_redirected_to events_path
   end
+
+  test "should get edit when logged in" do
+    sign_in users(:test1234)
+    get :edit, id: @event
+    assert_response :success
+  end
+
+  test "should redirect event update when not logged in" do
+    put :update, id: @event, event: { EventDescription: @event.EventDescription, cost: @event.cost, enddate: @event.enddate, eventname: @event.eventname, eventtime: @event.eventtime, sessions: @event.sessions, startdate: @event.startdate }
+    assert_response :redirect
+    assert_redirected_to new_user_session_path
+  end
+
+  test "should update event when logged in" do
+    sign_in users(:test1234)
+    put :update, id: @event, event: { EventDescription: @event.EventDescription, cost: @event.cost, enddate: @event.enddate, eventname: @event.eventname, eventtime: @event.eventtime, sessions: @event.sessions, startdate: @event.startdate }
+    assert_redirected_to event_path(assigns(:event))
+  end
+
+
+  #test "should update event" do
+  #  put :update, id: @event, event: { EventDescription: @event.EventDescription, cost: @event.cost, enddate: @event.enddate, eventname: @event.eventname, eventtime: @event.eventtime, sessions: @event.sessions, startdate: @event.startdate }
+  #  assert_redirected_to event_path(assigns(:event))
+  #end
+
+  #test "should get edit" do
+  #  get :edit, id: @event
+  #  assert_response :success
+  #end
+
 end
