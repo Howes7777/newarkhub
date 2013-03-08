@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  user: test1234
   eventname: MyString
   startdate: 2013-03-03
   enddate: 2013-03-03
@@ -10,6 +11,7 @@ one:
   EventDescription: MyText
 
 two:
+  user: test1234
   eventname: MyString
   startdate: 2013-03-03
   enddate: 2013-03-03
