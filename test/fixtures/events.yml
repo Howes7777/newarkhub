@@ -19,3 +19,13 @@ two:
   sessions: 1
   cost: 9.99
   EventDescription: MyText
+
+three:
+  user: bob
+  eventname: "Hi I'm Bob"
+  startdate: 2013-03-03
+  enddate: 2013-03-03
+  eventtime: 2013-03-03 14:44:02
+  sessions: 1
+  cost: 9.99
+  EventDescription: MyText

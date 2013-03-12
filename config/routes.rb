@@ -12,6 +12,8 @@ Newarkhub::Application.routes.draw do
   resources :events
   root to: 'events#index'
 
+  get '/:id', to: 'profiles#show'
+
 
 
 
