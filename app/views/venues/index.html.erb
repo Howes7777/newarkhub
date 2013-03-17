@@ -1,0 +1,51 @@
+<h1>Listing venues</h1>
+
+<table>
+  <tr>
+    <th>Venuename</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>Addresstown</th>
+    <th>Addresscounty</th>
+    <th>Postcode</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Website</th>
+    <th>Ddaaccess</th>
+    <th>Computers</th>
+    <th>Toilets</th>
+    <th>Wifi</th>
+    <th>Rentalcost</th>
+    <th>Otherinfo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @venues.each do |venue| %>
+  <tr>
+    <td><%= venue.venuename %></td>
+    <td><%= venue.address1 %></td>
+    <td><%= venue.address2 %></td>
+    <td><%= venue.addresstown %></td>
+    <td><%= venue.addresscounty %></td>
+    <td><%= venue.postcode %></td>
+    <td><%= venue.email %></td>
+    <td><%= venue.phone %></td>
+    <td><%= venue.website %></td>
+    <td><%= venue.ddaaccess %></td>
+    <td><%= venue.computers %></td>
+    <td><%= venue.toilets %></td>
+    <td><%= venue.wifi %></td>
+    <td><%= venue.rentalcost %></td>
+    <td><%= venue.otherinfo %></td>
+    <td><%= link_to 'Show', venue %></td>
+    <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
+    <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Venue', new_venue_path %>

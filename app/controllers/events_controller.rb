@@ -3,7 +3,10 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    # @events = Event.all
+    # @event =  Event.find(:all, :include => :events, :order  => "startdate DESC")
+    # @events = Event.order(:startdate)
+    @events = Event.order(:startdate).where(:startdate => (Time.now.midnight - 1.day)..Time.now.midnight)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,6 +18,7 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
+    # @event = Event.find(:all, :include => :events, :order  => "startdate DESC")
 
     respond_to do |format|
       format.html # show.html.erb

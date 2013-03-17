@@ -1,4 +1,7 @@
 Newarkhub::Application.routes.draw do
+  resources :venues
+
+
   get "profiles/show"
 
   devise_for :users
