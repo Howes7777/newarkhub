@@ -14,7 +14,8 @@
     <div class="container">
       <a class="brand" href="#">Newark Hub</a>
       <ul class="nav">
-        <li><%= link_to "All Events", events_path %></li>
+        <li><%= link_to "Events", events_path %></li>
+        <li><%= link_to "Venues", venues_path %></li>
       </ul>
       <ul class="nav pull-right">
         <% if user_signed_in? %>

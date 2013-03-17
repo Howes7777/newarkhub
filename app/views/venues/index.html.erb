@@ -1,12 +1,11 @@
-<h1>Listing venues</h1>
+<div class="page-header">
+<h1>Venues</h1>
+</div>
 
-<table>
+<table class="table table-striped table-bordered">
   <tr>
     <th>Venuename</th>
     <th>Address1</th>
-    <th>Address2</th>
-    <th>Addresstown</th>
-    <th>Addresscounty</th>
     <th>Postcode</th>
     <th>Email</th>
     <th>Phone</th>
@@ -16,19 +15,16 @@
     <th>Toilets</th>
     <th>Wifi</th>
     <th>Rentalcost</th>
-    <th>Otherinfo</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @venues.each do |venue| %>
+  <div class="venues">
   <tr>
     <td><%= venue.venuename %></td>
     <td><%= venue.address1 %></td>
-    <td><%= venue.address2 %></td>
-    <td><%= venue.addresstown %></td>
-    <td><%= venue.addresscounty %></td>
     <td><%= venue.postcode %></td>
     <td><%= venue.email %></td>
     <td><%= venue.phone %></td>
@@ -38,14 +34,22 @@
     <td><%= venue.toilets %></td>
     <td><%= venue.wifi %></td>
     <td><%= venue.rentalcost %></td>
-    <td><%= venue.otherinfo %></td>
-    <td><%= link_to 'Show', venue %></td>
+    <div class="meta">
+        <td><%= link_to 'Venue Details', venue %></td>
+    </div>
+    <%# if user_signed_in? && (current_user.id == event.user_id) %>
     <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
     <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%# else %>
+    <%#<td>    </td>
+    <td>        </td>
+    <%# end %>
+
   </tr>
+</div>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Venue', new_venue_path %>
+<%= link_to 'New Venue', new_venue_path , class: "btn btn-success" %>

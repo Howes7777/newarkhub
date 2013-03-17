@@ -27,7 +27,7 @@
      <td><%= event.eventtime %></td>
      <td><%= event.cost %></td>
        <div class="meta">
-         <td><%= link_to 'More Details', event %></td>
+         <td><%= link_to 'Event Details', event %></td>
        </div>
       <% if user_signed_in? && (current_user.id == event.user_id) %>
          <td><%= link_to 'Edit', edit_event_path(event) %></td>

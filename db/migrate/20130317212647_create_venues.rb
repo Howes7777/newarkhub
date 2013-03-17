@@ -16,6 +16,7 @@ class CreateVenues < ActiveRecord::Migration
       t.boolean :wifi
       t.decimal :rentalcost
       t.text :otherinfo
+      t.string :venueimage
 
       t.timestamps
     end
