@@ -1,6 +1,11 @@
 Newarkhub::Application.routes.draw do
+  resources :eventtypes
+
+
   resources :venues
 
+  match '/about' => 'pages#about'
+  match '/contact' => 'pages#contact'
 
   get "profiles/show"
 

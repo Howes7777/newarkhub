@@ -14,8 +14,10 @@
     <div class="container">
       <a class="brand" href="#">Newark Hub</a>
       <ul class="nav">
+        <li><%= link_to "About Us", about_path %></li>
         <li><%= link_to "Events", events_path %></li>
         <li><%= link_to "Venues", venues_path %></li>
+        <li><%= link_to "Event Types", eventtypes_path %></li>
       </ul>
       <ul class="nav pull-right">
         <% if user_signed_in? %>
@@ -30,6 +32,7 @@
   </div>
 </div>
 
+ <%= image_tag("newarkhubbanner.jpg", :alt => "banner newarkhub") %>
 
 <div class="container">
   <div class="row-fluid">

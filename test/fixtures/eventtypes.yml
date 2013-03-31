@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  eventtypename: MyString
+  eventtypedescription: MyText
+
+two:
+  eventtypename: MyString
+  eventtypedescription: MyText

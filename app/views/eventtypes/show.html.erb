@@ -1,0 +1,17 @@
+<h1>Event Type Details</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Event Type:</b>
+  <%= @eventtype.eventtypename %>
+</p>
+
+<p>
+  <b>Event Type Description:</b>
+  <%= @eventtype.eventtypedescription %>
+</p>
+
+
+<%= link_to 'Edit', edit_eventtype_path(@eventtype) %> |
+<%= link_to 'Back', eventtypes_path %>

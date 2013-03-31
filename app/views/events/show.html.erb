@@ -1,44 +1,57 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @event.user.full_name %>
-</p> 
+<h1>Event details</h1>
 
-<p>
-  <b>Event Name:</b>
-  <%= @event.eventname %>
-</p>
-
-<p>
-  <b>Start Date:</b>
-  <%= @event.startdate %>
-</p>
-
-<p>
-  <b>End Date:</b>
-  <%= @event.enddate %>
-</p>
-
-<p>
-  <b>Event Time:</b>
-  <%= @event.eventtime %>
-</p>
-
-<p>
-  <b>Sessions:</b>
-  <%= @event.sessions %>
-</p>
-
-<p>
-  <b>Cost:</b>
-  <%= @event.cost %>
-</p>
-
-<p>
-  <b>Event Description:</b>
-  <%= @event.EventDescription %>
-</p>
+<div class="container-fluid">
+<div class="row-fluid">
+  <div class="span12">
+    <p>
+      <b>Event Name:</b>
+      <%= @event.eventname %>
+    </p>
+    <p>
+      <b>Venue Name:</b>
+      <%= @event.venue.venuename %>
+    </p>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="span3">
+      <b>Start Date:</b>
+      <%= @event.startdate %>
+  </div>
+  <div class="span4">
+      <b>Event Time:</b>
+      <%= @event.eventtime %>
+  </div>
+  <div class="span5">
+      <b>End Date:</b>
+      <%= @event.enddate %>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="span3">
+      <b>Sessions:</b>
+      <%= @event.sessions %>
+  </div>
+  <div class="span3">
+      <b>Cost:   £</b>
+      <%= @event.cost %>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="span12">
+    <p>
+      <b>Event Description:</b>
+      <%= @event.EventDescription %>
+    </p>
+    <p>
+      <b>Added by:</b>
+      <%= @event.user.full_name %>
+    </p>
+  </div>
+</div>
+</div>
 
 <% if user_signed_in? %>
 <%= link_to 'Edit', edit_event_path(@event) %> 
