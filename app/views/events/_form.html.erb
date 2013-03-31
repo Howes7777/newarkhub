@@ -13,7 +13,15 @@
   <div class="field">
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.input :eventname %>
-    <%= f.input :venue_id, collection: Venue.all, label_method: :venuename %>
+  <div class="row-fluid">
+  <div class="span3"> 
+    <%= f.input :venue_id, collection: Venue.all, label_method: :Venue_details%>
+  </div>
+  <div class="span9">
+    * If no venue is listed please add the venue to newark hub.    <%= link_to 'New Venue', new_venue_path , class: "btn btn-success" %>
+  </div>
+</div>
+    <%= f.input :eventtype_id, collection: Eventtype.all, label_method: :eventtypename %>
     <%= f.input :startdate %>
     <%= f.input :enddate %>
     <%= f.input :eventtime %>

@@ -7,6 +7,7 @@
     <th>Avatar</th>
     <th>Event Name</th>
     <th>Venue Name</th>
+    <th>Event Type</th>
     <th>Start Date</th>
     <th>End Date</th>
     <th>Start Time</th>
@@ -20,8 +21,9 @@
   <div class="events">
     <tr>
      <td><%= image_tag event.user.gravatar_url %></td>
-     <td><%= event.eventname %></td>
+     <td><%= link_to event.eventname, event %></td>
      <td><%= event.venue.venuename %></td>
+     <td><%= event.eventtype.eventtypename %></td>
      <td><%= event.startdate %></td>
      <td><%= event.enddate %></td>
      <td><%= event.eventtime %></td>
