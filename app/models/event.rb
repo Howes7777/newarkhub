@@ -1,13 +1,16 @@
 class Event < ActiveRecord::Base
-  attr_accessible :user_id, :venue_id, :eventtype_id, :EventDescription, :cost, :enddate, :eventname, :eventtime, :sessions, :startdate
+  attr_accessible :user_id, :venue_id, :eventtype_id, :organisation_id, :EventDescription, :cost, :enddate, :eventname, :eventtime, :sessions, :startdate
   belongs_to :user
   belongs_to :venue
   belongs_to :eventtype
+  belongs_to :organisation
 
 
   validates :eventname, presence: true
 
   validates :venue_id, presence: true
+
+  validates :organisation_id, presence: true
 
   validates :EventDescription, presence: true,
   								length: { minimum: 10}

@@ -1,0 +1,31 @@
+<%= simple_form_for(@organisation, html: {class: "well"}) do |f| %>
+  <% if @organisation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@organisation.errors.count, "error") %> prohibited this venue from being saved:</h2>
+
+      <ul>
+      <% @organisation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+<% end %>
+
+  <div class="form-inputs">
+    <%= f.input :OrganisationName , :label => "Organisation Name" %>
+    <%= f.input :Address1 , :label => "Address 1" %>
+    <%= f.input :Address2 , :label => "Address 2" %>
+    <%= f.input :AddressTown , :label => "Town" %>
+    <%= f.input :AddressCounty , :label => "County" %>
+    <%= f.input :Postcode , :label => "Postcode" %>
+    <%= f.input :Email , :label => "Email Address" %>
+    <%= f.input :Phone , :label => "Phone" %>
+    <%= f.input :Contact , :label => "Contact person" %>
+    <%= f.input :Website , :label => "Website url" %>
+    <%= f.input :OtherInfo , :label => "Other Info" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

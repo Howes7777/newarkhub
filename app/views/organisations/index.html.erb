@@ -1,0 +1,46 @@
+<div class="page-header">
+<h1>Newark Organisations</h1>
+</div>
+
+<table class="table table-striped table-bordered">
+  <tr>
+    <th>Organisation Name</th>
+    <th>Address1</th>
+    <th>Postcode</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Contact</th>
+    <th>Website</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @organisations.each do |organisation| %>
+  <tr>
+    <div class="venues">
+    <td><%= link_to organisation.OrganisationName, organisation %></td>
+    <td><%= organisation.Address1 %></td>
+    <td><%= organisation.Postcode %></td>
+    <td><%= organisation.Email %></td>
+    <td><%= organisation.Phone %></td>
+    <td><%= organisation.Contact %></td>
+    <td><%= organisation.Website %></td>
+    <div class="meta">
+    <td><%= link_to 'More', organisation %></td>
+    </div>
+    <% if user_signed_in? %>
+    <td><%= link_to 'Edit', edit_organisation_path(organisation) %></td>
+    <td><%= link_to 'Delete', organisation, method: :delete, data: { confirm: 'Are you sure you want to delete this organisation?' } %></td>
+    <% else %>
+    <td>    </td>
+    <td>        </td>
+    <% end %>
+  </tr>
+</div>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Organisation', new_organisation_path , class: "btn btn-success" %>

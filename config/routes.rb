@@ -1,4 +1,7 @@
 Newarkhub::Application.routes.draw do
+  resources :organisations
+
+
   resources :eventtypes
 
 

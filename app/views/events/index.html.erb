@@ -7,6 +7,7 @@
     <th>Avatar</th>
     <th>Event Name</th>
     <th>Venue Name</th>
+    <th>Organisation Name</th>
     <th>Event Type</th>
     <th>Start Date</th>
     <th>End Date</th>
@@ -23,6 +24,7 @@
      <td><%= image_tag event.user.gravatar_url %></td>
      <td><%= link_to event.eventname, event %></td>
      <td><%= event.venue.venuename %></td>
+     <td><%= event.organisation.OrganisationName %></td>
      <td><%= event.eventtype.eventtypename %></td>
      <td><%= event.startdate.strftime("%d/%m/%Y") %></td>
      <td><%= event.enddate.strftime("%d/%m/%Y") %></td>

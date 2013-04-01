@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130401084859) do
+ActiveRecord::Schema.define(:version => 20130401163111) do
 
   create_table "events", :force => true do |t|
     t.string   "eventname"
@@ -26,9 +26,11 @@ ActiveRecord::Schema.define(:version => 20130401084859) do
     t.integer  "user_id"
     t.integer  "venue_id"
     t.integer  "eventtype_id"
+    t.integer  "organisation_id"
   end
 
   add_index "events", ["eventtype_id"], :name => "index_events_on_eventtype_id"
+  add_index "events", ["organisation_id"], :name => "index_events_on_organisation_id"
   add_index "events", ["user_id"], :name => "index_events_on_user_id"
   add_index "events", ["venue_id"], :name => "index_events_on_venue_id"
 
@@ -37,6 +39,22 @@ ActiveRecord::Schema.define(:version => 20130401084859) do
     t.text     "eventtypedescription"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
+  end
+
+  create_table "organisations", :force => true do |t|
+    t.string   "OrganisationName"
+    t.string   "Address1"
+    t.string   "Address2"
+    t.string   "AddressTown"
+    t.string   "AddressCounty"
+    t.string   "Postcode"
+    t.string   "Email"
+    t.string   "Phone"
+    t.string   "Contact"
+    t.string   "Website"
+    t.text     "OtherInfo"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -55,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20130401084859) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "securitylevel"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
