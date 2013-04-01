@@ -55,6 +55,10 @@
   <%= @organisation.OtherInfo %>
 </p>
 
-
-<%= link_to 'Edit', edit_organisation_path(@organisation) %> |
+<% if user_signed_in? %>
+<%= link_to 'Edit', edit_organisation_path(@organisation) %> 
+<% else %> 
+Edit
+<% end %>
+|
 <%= link_to 'Back', organisations_path %>

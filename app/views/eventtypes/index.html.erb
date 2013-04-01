@@ -19,7 +19,7 @@
     <div class="meta">
       <td><%= link_to 'Details', eventtype %></td>
     </div>
-    <% if user_signed_in? %>
+    <% if current_user.try(:admin?) %>
     <td><%= link_to 'Edit', edit_eventtype_path(eventtype) %></td>
     <td><%= link_to 'Delete', eventtype, method: :delete, data: { confirm: 'Are you sure you want to delete this event type?' } %></td>
     <% else %>

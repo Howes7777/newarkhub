@@ -12,6 +12,7 @@
   <%= @eventtype.eventtypedescription %>
 </p>
 
-
+<% if current_user.try(:admin?) %>
 <%= link_to 'Edit', edit_eventtype_path(@eventtype) %> |
+<% end %>
 <%= link_to 'Back', eventtypes_path %>

@@ -29,9 +29,9 @@
     <div class="meta">
     <td><%= link_to 'More', organisation %></td>
     </div>
-    <% if user_signed_in? %>
-    <td><%= link_to 'Edit', edit_organisation_path(organisation) %></td>
-    <td><%= link_to 'Delete', organisation, method: :delete, data: { confirm: 'Are you sure you want to delete this organisation?' } %></td>
+    <% if current_user.try(:admin?) %>
+        <td><%= link_to 'Edit', edit_organisation_path(organisation) %></td>
+        <td><%= link_to 'Delete', organisation, method: :delete, data: { confirm: 'Are you sure you want to delete this organisation?' } %></td>
     <% else %>
     <td>    </td>
     <td>        </td>
