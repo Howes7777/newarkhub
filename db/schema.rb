@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130331112734) do
+ActiveRecord::Schema.define(:version => 20130401084859) do
 
   create_table "events", :force => true do |t|
     t.string   "eventname"
@@ -79,8 +79,12 @@ ActiveRecord::Schema.define(:version => 20130331112734) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.integer  "venue_id"
+    t.boolean  "activeflag"
+    t.boolean  "hireable"
   end
 
+  add_index "venues", ["activeflag"], :name => "index_venues_on_activeflag"
+  add_index "venues", ["hireable"], :name => "index_venues_on_hireable"
   add_index "venues", ["venue_id"], :name => "index_venues_on_venue_id"
 
 end

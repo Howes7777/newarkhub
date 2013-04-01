@@ -6,40 +6,47 @@
 <div class="row-fluid">
   <div class="span12">
     <p>
+      <h4>
       <b>Event Name:</b>
       <%= @event.eventname %>
-    </p>
-    <p>
-      <b>Venue Name:</b>
-      <%= @event.venue.venuename %>
+      </h4>
     </p>
     <p>
       <b>Event Type:</b>
       <%= @event.eventtype.eventtypename %>
     </p>
+  <div class="row-fluid">
+  <div class="span4">
+      <b>Venue Name:</b>
+      <%= @event.venue.venuename %>
+  </div>
+  <div class="span4">
+      <b>Venue Address1:</b>
+      <%= @event.venue.address1 %>
+  </div>
+  <div class="span4">
+      <b>Venue Postcode:</b>
+      <%= @event.venue.postcode %>
+  </div>
   </div>
 </div>
 <div class="row-fluid">
-  <div class="span3">
-      <b>Start Date:</b>
-      <%= @event.startdate %>
+  <div class="span4">
+      <b>Date:</b>
+      <%= @event.startdate.strftime("%d/%m/%Y") %> to <%= @event.enddate.strftime("%d/%m/%Y") %>
   </div>
   <div class="span4">
       <b>Event Time:</b>
-      <%= @event.eventtime %>
-  </div>
-  <div class="span5">
-      <b>End Date:</b>
-      <%= @event.enddate %>
+      <%= @event.eventtime.strftime("%H:%M") %>
   </div>
 </div>
 <div class="row-fluid">
-  <div class="span3">
-      <b>Sessions:</b>
+  <div class="span4">
+      <b>Number of Sessions:</b>
       <%= @event.sessions %>
   </div>
   <div class="span3">
-      <b>Cost:   £</b>
+      <b>Cost per person:   £</b>
       <%= @event.cost %>
   </div>
 </div>

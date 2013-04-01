@@ -3,27 +3,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Venuename:</b>
+  <b>Venue Name:</b>
   <%= @venue.venuename %>
 </p>
 
 <p>
-  <b>Address1:</b>
+  <b>Address line 1:</b>
   <%= @venue.address1 %>
 </p>
 
 <p>
-  <b>Address2:</b>
+  <b>Address line 2:</b>
   <%= @venue.address2 %>
 </p>
 
 <p>
-  <b>Addresstown:</b>
+  <b>Town:</b>
   <%= @venue.addresstown %>
 </p>
 
 <p>
-  <b>Addresscounty:</b>
+  <b>County:</b>
   <%= @venue.addresscounty %>
 </p>
 
@@ -33,27 +33,27 @@
 </p>
 
 <p>
-  <b>Email:</b>
+  <b>Email address:</b>
   <%= @venue.email %>
 </p>
 
 <p>
-  <b>Phone:</b>
+  <b>Phone number:</b>
   <%= @venue.phone %>
 </p>
 
 <p>
-  <b>Website:</b>
+  <b>Website url:</b>
   <%= @venue.website %>
 </p>
 
 <p>
-  <b>Ddaaccess:</b>
+  <b>DDA Access:</b>
   <%= @venue.ddaaccess %>
 </p>
 
 <p>
-  <b>Computers:</b>
+  <b>Number of Computers:</b>
   <%= @venue.computers %>
 </p>
 
@@ -68,14 +68,21 @@
 </p>
 
 <p>
-  <b>Rentalcost:</b>
+  <b>Hireable:</b>
+  <%= @venue.hireable %>
+</p>
+
+<p>
+  <b>Rental Cost £:</b>
   <%= @venue.rentalcost %>
 </p>
 
 <p>
-  <b>Otherinfo:</b>
+  <b>Other Info:</b>
   <%= @venue.otherinfo %>
 </p>
+
+
 
 
 <%= link_to 'Edit', edit_venue_path(@venue) %> |

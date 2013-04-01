@@ -1,20 +1,21 @@
 <div class="page-header">
-<h1>Venues</h1>
+<h1>Newark Venues</h1>
 </div>
 
 <table class="table table-striped table-bordered">
   <tr>
-    <th>Venuename</th>
+    <th>Venue Name</th>
     <th>Address1</th>
     <th>Postcode</th>
     <th>Email</th>
     <th>Phone</th>
     <th>Website</th>
-    <th>Ddaaccess</th>
+    <th>DDA</th>
     <th>Computers</th>
     <th>Toilets</th>
     <th>Wifi</th>
-    <th>Rentalcost</th>
+    <th>Hireable</th>
+    <th>Rental Cost £</th>
     <th></th>
     <th></th>
     <th></th>
@@ -23,7 +24,7 @@
 <% @venues.each do |venue| %>
   <div class="venues">
   <tr>
-    <td><%= venue.venuename %></td>
+    <td><%= link_to venue.venuename, venue %></td>
     <td><%= venue.address1 %></td>
     <td><%= venue.postcode %></td>
     <td><%= venue.email %></td>
@@ -33,9 +34,10 @@
     <td><%= venue.computers %></td>
     <td><%= venue.toilets %></td>
     <td><%= venue.wifi %></td>
+    <td><%= venue.hireable %></td>
     <td><%= venue.rentalcost %></td>
     <div class="meta">
-        <td><%= link_to 'Venue Details', venue %></td>
+        <td><%= link_to 'More', venue %></td>
     </div>
     <% if user_signed_in? %>
     <td><%= link_to 'Edit', edit_venue_path(venue) %></td>

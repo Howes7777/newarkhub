@@ -1,4 +1,6 @@
 class EventtypesController < ApplicationController
+   before_filter :authenticate_user!, only: [:new, :create, :edit, :update]
+  
   # GET /eventtypes
   # GET /eventtypes.json
   def index

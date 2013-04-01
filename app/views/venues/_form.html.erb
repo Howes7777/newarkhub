@@ -12,21 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.input :venuename %>
-    <%= f.input :address1 %>
-    <%= f.input :address2 %>
-    <%= f.input :addresstown %>
-    <%= f.input :addresscounty %>
-    <%= f.input :postcode %>
-    <%= f.input :email %>
-    <%= f.input :phone %>
-    <%= f.input :website %>
-    <%= f.input :ddaaccess %>
-    <%= f.input :computers %>
-    <%= f.input :toilets %>
-    <%= f.input :wifi %>
-    <%= f.input :rentalcost %>
-    <%= f.input :otherinfo %>
+    <%= f.input :venuename, :label => "Venue Name" %>
+    <%= f.input :address1 , :label => "Address line 1"%>
+    <%= f.input :address2 , :label => "Address line 2"%>
+    <%= f.input :addresstown, :label => "Town" %>
+    <%= f.input :addresscounty, :label => "County" %>
+    <%= f.input :postcode, :label => "Postcode" %>
+    <%= f.input :email , :label => "Venue Email address"%>
+    <%= f.input :phone , :label => "Venue phone number" %>
+    <%= f.input :website , :label => "Website url"%>
+    <%= f.input :ddaaccess , :label => "DDA Access (disabled access)"%>
+    <%= f.input :computers , :label => "Computers (number of)"%>
+    <%= f.input :toilets , :label => "Toilets"%>
+    <%= f.input :wifi , :label => "Wifi"%>
+    <%= f.input :hireable , :label => "Venue Hireable"%>
+    <%= f.input :rentalcost, :label => "Rental Cost £" %>
+    <%= f.input :otherinfo, :label => "Any other info" %>
   </div>
 
   <div class="form-actions">

@@ -5,12 +5,19 @@ class Event < ActiveRecord::Base
   belongs_to :eventtype
 
 
+  validates :eventname, presence: true
+
+  validates :venue_id, presence: true
+
   validates :EventDescription, presence: true,
   								length: { minimum: 10}
 
 
+  validates :eventtype_id, presence: true
   validates :user_id , presence: true
 
-  
+  validates :startdate, presence: true
+  validates :enddate, presence: true
+  validates :eventtime, presence: true
 
 end

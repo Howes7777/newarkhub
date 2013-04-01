@@ -23,7 +23,7 @@ class EventsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should be logged in to post status" do
+  test "should be logged in to post event" do
       post :create, status: { content: "Hello" }
       assert_response :redirect
       assert_redirected_to new_user_session_path
