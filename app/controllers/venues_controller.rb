@@ -42,6 +42,7 @@ class VenuesController < ApplicationController
   # POST /venues
   # POST /venues.json
   def create
+    #@venue = Venue.new(params[:venue])
     @venue = Venue.new(params[:venue])
 
     respond_to do |format|
@@ -82,4 +83,5 @@ class VenuesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end

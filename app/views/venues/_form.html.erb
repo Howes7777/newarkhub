@@ -1,4 +1,4 @@
-<%= simple_form_for(@venue, html: {class: "well"}) do |f| %>
+<%= simple_form_for(@venue, html: {class: "well", :multipart => true}) do |f| %>
   <% if @venue.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@venue.errors.count, "error") %> prohibited this venue from being saved:</h2>
@@ -28,6 +28,7 @@
     <%= f.input :hireable , :label => "Venue Hireable"%>
     <%= f.input :rentalcost, :label => "Rental Cost £" %>
     <%= f.input :otherinfo, :label => "Any other info" %>
+    <%= f.file_field :photo , :label => "Upload photo image" %>
   </div>
 
   <div class="form-actions">

@@ -4,15 +4,16 @@
 
 <table class="table table-striped table-bordered">
   <tr>
-    <th>Avatar</th>
-    <th>Event Name</th>
-    <th>Venue Name</th>
-    <th>Organisation Name</th>
-    <th>Event Type</th>
-    <th>Start Date</th>
-    <th>End Date</th>
-    <th>Start Time</th>
+    <th>Event</th>
+    <th>At</th>
+    <th>Venue</th>
+    <th>Run by</th>
+    <th>Type</th>
+    <th>Start</th>
+    <th>Time</th>
+    <th>End</th>
     <th>Cost £</th>
+    <th>Added by</th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,15 +22,18 @@
 <% @events.each do |event| %>
   <div class="events">
     <tr>
-     <td><%= image_tag event.user.gravatar_url %></td>
      <td><%= link_to event.eventname, event %></td>
      <td><%= event.venue.venuename %></td>
+     <td><% if event.venue.photo.exists? then %>
+  <%= image_tag event.venue.photo.url(:thumb) %>
+<% end %></td>
      <td><%= event.organisation.OrganisationName %></td>
      <td><%= event.eventtype.eventtypename %></td>
      <td><%= event.startdate.strftime("%d/%m/%Y") %></td>
      <td><%= event.enddate.strftime("%d/%m/%Y") %></td>
      <td><%= event.eventtime.strftime("%H:%M") %></td>
      <td><%= event.cost %></td>
+     <td><%= image_tag event.user.gravatar_url %></td>
        <div class="meta">
          <td><%= link_to 'More', event %></td>
        </div>

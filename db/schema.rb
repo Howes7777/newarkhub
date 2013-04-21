@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130401173503) do
+ActiveRecord::Schema.define(:version => 20130421142253) do
 
   create_table "events", :force => true do |t|
     t.string   "eventname"
@@ -96,11 +96,18 @@ ActiveRecord::Schema.define(:version => 20130401173503) do
     t.boolean  "wifi"
     t.decimal  "rentalcost"
     t.text     "otherinfo"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
     t.integer  "venue_id"
     t.boolean  "activeflag"
     t.boolean  "hireable"
+    t.string   "venueimage_file_name"
+    t.string   "venueimage_content_type"
+    t.integer  "venueimage_file_size"
+    t.datetime "venueimage_updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
   end
 
   add_index "venues", ["activeflag"], :name => "index_venues_on_activeflag"
