@@ -3,11 +3,9 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    # @events = Event.all
-    # @event =  Event.find(:all, :include => :events, :order  => "startdate DESC")
-    @events = Event.order(:startdate)
-    # @events = Event.order(:startdate).where(:startdate => (Time.now.midnight - 1.day)..Time.now.midnight)
-
+    @events = Event.all
+    #@events = Event.find(:all, :include => :events, :order  => "startdate DESC")
+    @events = Event.order(:startdate).where(['startdate > ?', DateTime.now - 1.days])
 
     respond_to do |format|
       format.html # index.html.erb

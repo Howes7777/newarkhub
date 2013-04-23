@@ -8,9 +8,7 @@
 </p>
 
 <p>
-<% if @venue.photo.exists? then %>
   <%= image_tag @venue.photo.url(:small) %>
-<% end %>
 </p>
 
 <p>

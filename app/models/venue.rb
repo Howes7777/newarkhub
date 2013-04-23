@@ -13,7 +13,11 @@ class Venue < ActiveRecord::Base
 
     #paperclip
     has_attached_file :photo,
+       :storage => :dropbox,
+       :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
        :styles => {
        :thumb => "100x100#",
-       :small => "400x400>" }
+       :small => "400x400>" },
+       :dropbox_options => {:path => proc { |style| "photos/#{id}/#{style}/#{photo.original_filename}"  } }
+
 end
