@@ -7,11 +7,9 @@
     <th>Event</th>
     <th>Venue</th>
     <th>Venue Photo</th>
-    <th>Organisation</th>
     <th>Type</th>
-    <th>Start</th>
-    <th>Time</th>
-    <th>End</th>
+    <th>Start Date</th>
+    <th>Start Time</th>
     <th>Cost £</th>
     <th>Added by</th>
     <th></th>
@@ -25,10 +23,8 @@
      <td><%= link_to event.eventname, event %></td>
      <td><%= event.venue.venuename %></td>
      <td><%= image_tag event.venue.photo.url(:thumb) %></td>
-     <td><%= event.organisation.OrganisationName %></td>
      <td><%= event.eventtype.eventtypename %></td>
      <td><%= event.startdate.strftime("%d/%m/%Y") %></td>
-     <td><%= event.enddate.strftime("%d/%m/%Y") %></td>
      <td><%= event.eventtime.strftime("%H:%M") %></td>
      <td><%= event.cost %></td>
      <td><%= image_tag event.user.gravatar_url %></td>
